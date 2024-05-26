@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map of Zurich Canton</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery added here -->
+    <style>
+        body, html {
+            height: 100%; /* Make sure the body takes full viewport height */
+            margin: 0; /* Remove default margin */
+            display: flex; /* Use flexbox to align children */
+            justify-content: center; /* Center children horizontally */
+            align-items: center; /* Center children vertically */
+            flex-direction: column; /* Align children vertically in column */
+        }
+        #map-container {
+            display: flex; /* Use flexbox to align children */
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center children horizontally */
+        }
+        #map { 
+            height: 800px; 
+            width: 800px; 
+        }
+        button {
+            margin-top: 20px; /* Add some space between the map and the button */
+            padding: 10px 20px; /* Padding for better button dimensions */
+            font-size: 16px; /* Increase font size for better readability */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        #nearestNeighbor{
+            font-size: 24px;
+            font-weight: bold;
+        }
+        #coefficient{
+            font-size: 24px;
+            font-weight: bold;
+            background-color: lightgrey;
+        }
+        #nodes{
+            width: 800px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map-container">
+        <div id="map"></div>
+        <button id="submitBtn">Koeffizient berechnen</button><br>
+        <div id="nearestNeighbor"></div>
+        <div id="coefficient"></div>
+        <div id="nodes"></div>
+
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
